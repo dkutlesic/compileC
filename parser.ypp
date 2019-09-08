@@ -1,31 +1,65 @@
 %{
     using namespace std;
-    #include <iostream>
-    #include <string>
+    #include<iostream>
+    #include<cstdlib>
+    #include<string>
 
-    extern int yylex();
+    extern int yylex(void);
+
+    void yyerror(const string& s){
+        cerr<<"Error: "<<s<<endl;
+        exit(EXIT_FAILURE);
+    }
 %}
 
 %union{
     int num;
-    string id;
+    string* id;
 }
 
-token IF_TOKEN ELSE_TOKEN WHILE_TOKEN
-token <num> NUM_TOKEN
-token <id> ID_TOKEN
+%token IF_TOKEN ELSE_TOKEN WHILE_TOKEN
+%token INC_TOKEN DEC_TOKEN
+%token EQUAL_TOKEN
+%token <num> NUM_TOKEN
+%token <id> ID_TOKEN
+%token UMinus
 
 %%
 
 instrution_array : instrution_array instruction{
 
 
-}
-                | instruction {
+        } | instruction ';' {
 
 };
 
-instrunction : assignment {
+instruction : assignment {
+
+        } | if_instruction {
+
+        } | if_else_instruction {
+
+        } | while_instruction {
+
+};
+
+if_instruction : IF_TOKEN '(' condition ')' '{' instrution_array '}' {
+
+};
+
+if_else_instruction : IF_TOKEN '(' condition ')' '{' instrution_array '}' ELSE_TOKEN '{' instrution_array '}' {
+
+};
+
+while_instruction : WHILE_TOKEN '(' condition ')' '{' instrution_array '}' {
+
+};
+
+condition : izraz '<' izraz {
+
+        } | izraz '>' izraz {
+
+        } | izraz EQUAL_TOKEN izraz {
 
 };
 
@@ -34,6 +68,24 @@ assignment : ID_TOKEN '=' izraz {
 };
 
 izraz : NUM_TOKEN {
+
+        } | ID_TOKEN {
+
+        } | izraz INC_TOKEN {
+
+        } | izraz DEC_TOKEN {
+
+        } | '-' izraz %prec UMinus {
+
+        } | izraz '+' izraz {
+
+        } | izraz '-' izraz {
+
+        } | izraz '*' izraz {
+
+        } | izraz '/' izraz {
+
+        } '(' izraz ')' {
 
 };
 
