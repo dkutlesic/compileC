@@ -1,0 +1,46 @@
+%{
+    using namespace std;
+    #include <iostream>
+    #include <string>
+
+    extern int yylex();
+%}
+
+%union{
+    int num;
+    string id;
+}
+
+token IF_TOKEN ELSE_TOKEN WHILE_TOKEN
+token <num> NUM_TOKEN
+token <id> ID_TOKEN
+
+%%
+
+instrution_array : instrution_array instruction{
+
+
+}
+                | instruction {
+
+};
+
+instrunction : assignment {
+
+};
+
+assignment : ID_TOKEN '=' izraz {
+
+};
+
+izraz : NUM_TOKEN {
+
+};
+
+
+%%
+
+int main(){
+    yyparse();
+    return 0;
+}
