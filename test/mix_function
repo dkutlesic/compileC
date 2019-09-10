@@ -1,0 +1,13 @@
+int dLa(int a, int b){
+    int x = 5;
+    return 7;
+}
+
+int p(int a){
+    return a;
+}
+
+int main(){
+    int a = 7;
+    int x = dLa(4, a);
+}

@@ -9,6 +9,7 @@ public:
   virtual ~Expression(){}
   
   virtual Expression* clone() const = 0;
+  virtual int calculate() const = 0;
 };
 
 
@@ -18,6 +19,7 @@ public:
   ~Const();
   
   Expression* clone() const;
+  int calculate() const;
 private: 
   int _x;
 };
@@ -28,6 +30,7 @@ public:
   ~Id();
   
   Expression* clone() const;
+  int calculate() const;
 private: 
   string* _var;
 };
@@ -40,12 +43,13 @@ protected:
     Expression* _child;
 };
 
-class Inc:public Unary{
+/*class Inc:public Unary{
 public:
     Inc(Expression*);
     //~Inc();
     
     Expression* clone() const;
+    //int calculate() const;
 };
 
 class Dec:public Unary{
@@ -54,7 +58,8 @@ public:
     //~Dec();
     
     Expression* clone() const;
-};
+    //int calculate() const;
+};*/
 
 class Minus:public Unary{
 public:
@@ -62,6 +67,7 @@ public:
     //~Minus();
     
     Expression* clone() const;
+    int calculate() const;
 };
 
 class Binary:public Expression{
@@ -79,6 +85,7 @@ public:
   //~Sum();
   
   Expression* clone() const;
+  int calculate() const;
 };
 
 class Sub:public Binary{
@@ -87,6 +94,7 @@ public:
   //~Sum();
   
   Expression* clone() const;
+  int calculate() const;
 };
 
 class Mul:public Binary{
@@ -95,6 +103,7 @@ public:
   //~Mul();
   
   Expression* clone() const;
+  int calculate() const;
 };
 
 class Div:public Binary{
@@ -103,6 +112,7 @@ public:
   //~Div();
   
   Expression* clone() const;
+  int calculate() const;
 };
 
 #endif

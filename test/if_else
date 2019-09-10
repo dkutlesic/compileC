@@ -1,0 +1,10 @@
+int main()
+{
+    int a = 14;
+    if(a<5){
+        int x = 12;
+    }
+    else {
+        int y = 16;
+    }
+}

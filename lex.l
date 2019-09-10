@@ -12,7 +12,7 @@
 %}
 
 NUM "0"|[1-9][0-9]*
-ID [a-zA-Z][a-zA-Z0-9_]*
+ID [a-zA-Z_][a-zA-Z0-9_]*
 
 %%
 
@@ -40,6 +40,18 @@ ID [a-zA-Z][a-zA-Z0-9_]*
     return EQUAL_TOKEN;
 }
 
+"int" {
+    return INT_TOKEN;
+}
+
+"return" {
+    return RETURN_TOKEN;
+}
+
+"main" {
+    return MAIN_TOKEN;
+}
+
 {NUM} {
     yylval.num = atoi(yytext);
     return NUM_TOKEN;
@@ -50,11 +62,11 @@ ID [a-zA-Z][a-zA-Z0-9_]*
     return ID_TOKEN;
 }
 
-[{}()] {
+[ \t\n] { }
+
+[-+*=/{}();<>,] { 
     return *yytext;
 }
-
-[ \t\n] { }
 
 . {
     cerr<<"Uknown character: "<<*yytext<<endl;

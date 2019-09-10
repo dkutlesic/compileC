@@ -1,0 +1,7 @@
+int main() {
+    int x = 5;
+    int y = 17;
+    int a = x + y;
+    int b = 12 + x;
+    int c = 4 + 7;
+}

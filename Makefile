@@ -21,4 +21,4 @@ expression.o: expression.cpp expression.hpp
 .PHONY: clean
 
 clean:
-	rm *.o *.output parser.tab.*
+	rm *.o *.output parser.tab.* $(PROJECT) lex.yy.c
