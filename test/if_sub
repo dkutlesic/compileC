@@ -1,7 +1,7 @@
-int main(){
+void main(){
     if(3>2){
-        int x = 5;
-        int y = x - 5;
-        int a = 14-12-15;
+        x = 5;
+        y = x - 5;
+        a = 14-12-15;
     }
 }

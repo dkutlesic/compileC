@@ -2,8 +2,8 @@ int funct_ion3(int x, int y){
     return x + y;
 }
 
-int main(){
-    int a = 4;
-    int b = -6;
-    int c = funct_ion3(a, b);
+void main(){
+    a = 4;
+    b = -6;
+    c = funct_ion3(a, b);
 }

@@ -1,0 +1,19 @@
+int f(int a, int b){
+    return a+b;
+}
+
+int kv(int a){
+    return a*a;
+}
+
+void main() {
+    a = 5;
+
+    b = kv(a);
+    if(b<30){
+        while(a == 4){
+            c = 8;
+        }
+    }
+
+}

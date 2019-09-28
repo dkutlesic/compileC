@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "queue": "cpp",
+        "random": "cpp",
+        "system_error": "cpp",
+        "bitset": "cpp",
+        "string_view": "cpp",
+        "iosfwd": "cpp",
+        "*.ypp": "cpp",
+        "__locale": "cpp",
+        "typeinfo": "cpp"
+    }
+}

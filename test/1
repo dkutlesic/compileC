@@ -1,0 +1,18 @@
+int f(){
+    return 5;
+}
+
+int g(int x){
+    x = 22*6-(18-2);
+    return x;
+}
+
+void main(){
+    a = 8;
+    while(a>0){
+        a = a - 1;
+        if (a == 5){
+            y = 3;
+        }
+    }
+}

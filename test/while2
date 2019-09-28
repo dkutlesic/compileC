@@ -1,6 +1,6 @@
-int main(){
-    int bla = 16;
-    int a = 1;
+void main(){
+    bla = 16;
+    a = 1;
     while(bla<bla){
         a = a*2;
     }

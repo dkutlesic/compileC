@@ -1,7 +1,7 @@
-int main() {
-    int x = 5;
-    int y = 17;
-    int a = x + y;
-    int b = 12 + x;
-    int c = 4 + 7;
+void main() {
+    x = 5;
+    y = 17;
+    a = x + y;
+    b = 12 + x;
+    c = 4 + 7;
 }

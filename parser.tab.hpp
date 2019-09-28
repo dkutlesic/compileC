@@ -1,14 +1,14 @@
-/* A Bison parser, made by GNU Bison 3.3.2.  */
+/* A Bison parser, made by GNU Bison 2.3.  */
 
-/* Bison interface for Yacc-like parsers in C
+/* Skeleton interface for Bison's Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2019 Free Software Foundation,
-   Inc.
+   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+   Free Software Foundation, Inc.
 
-   This program is free software: you can redistribute it and/or modify
+   This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 3 of the License, or
-   (at your option) any later version.
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -16,7 +16,9 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -31,60 +33,69 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-/* Undocumented macros, especially those whose name start with YY_,
-   are private implementation details.  Do not rely on them.  */
-
-#ifndef YY_YY_PARSER_TAB_HPP_INCLUDED
-# define YY_YY_PARSER_TAB_HPP_INCLUDED
-/* Debug traces.  */
-#ifndef YYDEBUG
-# define YYDEBUG 0
-#endif
-#if YYDEBUG
-extern int yydebug;
-#endif
-
-/* Token type.  */
+/* Tokens.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
-  enum yytokentype
-  {
-    IF_TOKEN = 258,
-    ELSE_TOKEN = 259,
-    WHILE_TOKEN = 260,
-    INC_TOKEN = 261,
-    DEC_TOKEN = 262,
-    EQUAL_TOKEN = 263,
-    INT_TOKEN = 264,
-    RETURN_TOKEN = 265,
-    MAIN_TOKEN = 266,
-    NUM_TOKEN = 267,
-    ID_TOKEN = 268,
-    UMINUS = 269
-  };
+   /* Put the tokens into the symbol table, so that GDB and other debuggers
+      know about them.  */
+   enum yytokentype {
+     IF_TOKEN = 258,
+     ELSE_TOKEN = 259,
+     WHILE_TOKEN = 260,
+     INC_TOKEN = 261,
+     DEC_TOKEN = 262,
+     EQUAL_TOKEN = 263,
+     INT_TOKEN = 264,
+     VOID_TOKEN = 265,
+     RETURN_TOKEN = 266,
+     MAIN_TOKEN = 267,
+     NUM_TOKEN = 268,
+     ID_TOKEN = 269,
+     IF_PRIOR = 270,
+     IF_ELSE_PRIOR = 271,
+     UMINUS = 272
+   };
 #endif
+/* Tokens.  */
+#define IF_TOKEN 258
+#define ELSE_TOKEN 259
+#define WHILE_TOKEN 260
+#define INC_TOKEN 261
+#define DEC_TOKEN 262
+#define EQUAL_TOKEN 263
+#define INT_TOKEN 264
+#define VOID_TOKEN 265
+#define RETURN_TOKEN 266
+#define MAIN_TOKEN 267
+#define NUM_TOKEN 268
+#define ID_TOKEN 269
+#define IF_PRIOR 270
+#define IF_ELSE_PRIOR 271
+#define UMINUS 272
 
-/* Value type.  */
+
+
+
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-
-union YYSTYPE
+typedef union YYSTYPE
+#line 37 "parser.ypp"
 {
-#line 24 "parser.ypp" /* yacc.c:1921  */
-
     int num;
     string* id;
-
-#line 78 "parser.tab.hpp" /* yacc.c:1921  */
-};
-
-typedef union YYSTYPE YYSTYPE;
-# define YYSTYPE_IS_TRIVIAL 1
+    char* str;
+    ExpressionValue* ev;
+    Condition* c;
+    Function* f;
+    vector<ExpressionValue*> * vev;
+    vector<string*>* vs;
+}
+/* Line 1529 of yacc.c.  */
+#line 94 "parser.tab.hpp"
+	YYSTYPE;
+# define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
+# define YYSTYPE_IS_TRIVIAL 1
 #endif
-
 
 extern YYSTYPE yylval;
 
-int yyparse (void);
-
-#endif /* !YY_YY_PARSER_TAB_HPP_INCLUDED  */

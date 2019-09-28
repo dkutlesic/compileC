@@ -8,7 +8,10 @@
     #include<cstdlib>
     #include<string>
 
+    #include "expressionvalue.hpp"
+
     #include "parser.tab.hpp"
+
 %}
 
 NUM "0"|[1-9][0-9]*
@@ -42,6 +45,10 @@ ID [a-zA-Z_][a-zA-Z0-9_]*
 
 "int" {
     return INT_TOKEN;
+}
+
+"void" {
+    return VOID_TOKEN;
 }
 
 "return" {
